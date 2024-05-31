@@ -12,6 +12,9 @@
   },
   "license": "Apache-2.0",
   "scripts": {
+    "heroku-postbuild": "npm install ts-node",
+    "build": "tsc -p tsconfig.build.json",
+    "postinstall": "npm install ts-node",
     "dev": "cross-env JACKSON_API_KEYS=secret IDP_ENABLED=true next dev -p 5225",
     "dev-dbs": "docker-compose -f ./_dev/docker-compose.yml up -d",
     "dev-dbs-destroy": "docker-compose -f ./_dev/docker-compose.yml down --volumes --remove-orphans",
